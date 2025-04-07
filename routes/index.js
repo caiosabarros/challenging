@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const passport = require('passport');
+const path = require('path');
 
 router.use('/', require('./swagger'));
 
@@ -12,7 +14,14 @@ router.use('/social', require('./social.js'))
 router.use('/emotional', require('./emotional.js'))
 router.use('/physical', require('./physical.js'))
 
-// GET / user / logout
 // GET /user/login
+router.get('/login', passport.authenticate('github'));
+// GET / user / logout
+router.logout('/logout', function (req, res, next) {
+	req.logout(function (err) {
+		if (err) { return next(err); }
+		res.redirect('/');
+	});
+})
 
 module.exports = router;
