@@ -94,15 +94,15 @@ const updatePhysicalWithNewUser = async (req, res, next) => {
             return res.status(404).json({ error: "User not found" });
         }
 
-        const response = await mongodb.getDatabase().db("challenging").collection('physical').updateOne(
-            { _id: listId },
-            { $addToSet: { users: user } }
-        );
-
         // add new category to user.categories without having duplicates
         await mongodb.getDatabase().db("challenging").collection('users').updateOne(
             { username },
             { $addToSet: { categories: "physical" } }
+        );
+
+        const response = await mongodb.getDatabase().db("challenging").collection('physical').updateOne(
+            { _id: listId },
+            { $addToSet: { users: user } }
         );
 
         if (response.modifiedCount > 0) {
