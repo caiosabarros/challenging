@@ -13,7 +13,7 @@
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "description": "Challenging API documentation",
         "responses": {
           "200": {
             "description": "OK"
@@ -23,7 +23,7 @@
     },
     "/login": {
       "get": {
-        "description": "",
+        "description": "Login to the Challenging application",
         "responses": {
           "default": {
             "description": ""
@@ -33,7 +33,7 @@
     },
     "/auth/status": {
       "get": {
-        "description": "",
+        "description": "Check whether you are connected to the Challenging application",
         "responses": {
           "200": {
             "description": "OK"
@@ -46,7 +46,7 @@
     },
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "Swagger documentation for the Challenging application",
         "responses": {
           "default": {
             "description": ""
@@ -56,7 +56,7 @@
     },
     "/users/": {
       "get": {
-        "description": "",
+        "description": "Get lists of users currently active on the Challenging application",
         "produces": [
           "application/json"
         ],
@@ -67,7 +67,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Register a new user to the Challenging application",
         "parameters": [
           {
             "name": "body",
@@ -107,15 +107,15 @@
         }
       }
     },
-    "/users/{id}": {
+    "/users/{username}": {
       "get": {
-        "description": "",
+        "description": "Get an user by their username.",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "username",
             "in": "path",
             "required": true,
             "type": "string"
@@ -128,10 +128,10 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a new user in the Challenging application",
         "parameters": [
           {
-            "name": "id",
+            "name": "username",
             "in": "path",
             "required": true,
             "type": "string"
@@ -143,22 +143,22 @@
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "any"
+                  "example": "myname_or_surname"
                 },
                 "categories": {
-                  "example": "any"
+                  "example": "[emotional, physical, intellectual, social]"
                 },
                 "challenges": {
-                  "example": "any"
+                  "example": "[firstListId, secondListId]"
                 },
                 "githubUrl": {
-                  "example": "any"
+                  "example": "https://github.com/mariejane"
                 },
                 "bio": {
-                  "example": "any"
+                  "example": "This is a description of you you'd like other people to contemplate."
                 },
                 "age": {
-                  "example": "any"
+                  "example": 18
                 }
               }
             }
@@ -166,7 +166,7 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Successfully registered!"
           },
           "500": {
             "description": "Internal Server Error"
@@ -174,10 +174,10 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete an user from the Challenging application.",
         "parameters": [
           {
-            "name": "id",
+            "name": "username",
             "in": "path",
             "required": true,
             "type": "string"
@@ -195,7 +195,7 @@
     },
     "/intellectual/": {
       "get": {
-        "description": "",
+        "description": "Get available lists of intellectual challenges in the Challenging application.",
         "produces": [
           "application/json"
         ],
@@ -206,7 +206,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new list of intellectual challenges.",
         "responses": {
           "default": {
             "description": ""
@@ -214,7 +214,7 @@
         }
       }
     },
-    "/intellectual/{id}": {
+    "/intellectual/{listId}": {
       "get": {
         "description": "",
         "produces": [
@@ -222,7 +222,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -235,10 +235,10 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a list of intellectual challenges in the Challenging application.",
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -254,7 +254,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -279,7 +279,7 @@
     },
     "/social/": {
       "get": {
-        "description": "",
+        "description": "Get available lists of social challenges in the Challenging application.",
         "produces": [
           "application/json"
         ],
@@ -290,7 +290,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new list of social challenges.",
         "parameters": [
           {
             "name": "body",
@@ -342,7 +342,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a list of social challenges in the Challenging application.",
         "parameters": [
           {
             "name": "listId",
@@ -419,7 +419,7 @@
     },
     "/social/{listId}/{username}": {
       "put": {
-        "description": "",
+        "description": "Update a list of social challenges in the Challenging application.",
         "parameters": [
           {
             "name": "listId",
@@ -470,7 +470,7 @@
     },
     "/emotional/": {
       "get": {
-        "description": "",
+        "description": "Get available lists of emotional challenges in the Challenging application.",
         "produces": [
           "application/json"
         ],
@@ -481,7 +481,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new list of emotional challenges.",
         "responses": {
           "default": {
             "description": ""
@@ -489,7 +489,7 @@
         }
       }
     },
-    "/emotional/{id}": {
+    "/emotional/{listId}": {
       "get": {
         "description": "",
         "produces": [
@@ -497,7 +497,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -510,10 +510,10 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a list of emotional challenges in the Challenging application.",
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -529,7 +529,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -554,7 +554,7 @@
     },
     "/physical/": {
       "get": {
-        "description": "",
+        "description": "Get available lists of physical challenges in the Challenging application.",
         "produces": [
           "application/json"
         ],
@@ -565,7 +565,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new list of physical challenges.",
         "responses": {
           "default": {
             "description": ""
@@ -573,7 +573,7 @@
         }
       }
     },
-    "/physical/{id}": {
+    "/physical/{listId}": {
       "get": {
         "description": "",
         "produces": [
@@ -581,7 +581,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -594,10 +594,10 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a list of physical challenges in the Challenging application.",
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -613,7 +613,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
