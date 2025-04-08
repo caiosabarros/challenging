@@ -1,0 +1,56 @@
+[
+    {
+        "users": [],
+        "dailyChallenges": [
+            "1. Read 10 pages of a book.",
+            "2. Learn a new word and use it in a sentence.",
+            "3. Watch a short educational video.",
+            "4. Journal about something you’ve been curious about.",
+            "5. Solve a puzzle or riddle.",
+            "6. Take a break from social media for 12 hours.",
+            "7. Research a topic you’ve always wanted to explore.",
+            "8. Try writing with your non-dominant hand.",
+            "9. Explain a concept you know to someone else.",
+            "10. List five questions you don’t know the answer to."
+        ],
+        "listDifficulty": 2,
+        "title": "Curiosity Builder",
+        "description": "Spark new thoughts and light up your brain’s learning circuits daily."
+    },
+    {
+        "users": [],
+        "dailyChallenges": [
+            "1. Debate a topic with someone respectfully.",
+            "2. Listen to a podcast on a subject you're unfamiliar with.",
+            "3. Read an article from a reputable source.",
+            "4. Write a short essay or reflection.",
+            "5. Learn a new skill via YouTube or tutorial.",
+            "6. Practice memory recall on a recent topic.",
+            "7. Watch a TED Talk and summarize it.",
+            "8. Play a strategy game or logic puzzle.",
+            "9. Create a mind map of a concept.",
+            "10. Research the history of something you use daily."
+        ],
+        "listDifficulty": 3,
+        "title": "Daily Brain Stretch",
+        "description": "Push your cognitive limits while staying curious and creative."
+    },
+    {
+        "users": [],
+        "dailyChallenges": [
+            "1. Write a 1-paragraph summary of a book or article.",
+            "2. Learn a quote and reflect on its meaning.",
+            "3. Do a timed logic puzzle.",
+            "4. Memorize a short poem or stanza.",
+            "5. Organize a new topic in a digital folder.",
+            "6. Teach someone something new.",
+            "7. Read something that challenges your beliefs.",
+            "8. Follow a 20-minute tutorial.",
+            "9. Sketch a visual representation of an idea.",
+            "10. Reflect on your learning journey this week."
+        ],
+        "listDifficulty": 3,
+        "title": "Thinker's Toolkit",
+        "description": "Small daily exercises to grow focus, knowledge, and critical thinking."
+    }
+]

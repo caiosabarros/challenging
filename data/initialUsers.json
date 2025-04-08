@@ -1,0 +1,97 @@
+[
+    {
+        "username": "codeExplorer99",
+        "categories": [
+            "intellectual",
+            "social"
+        ],
+        "challenges": [
+            "dailyQuiz",
+            "groupDebate"
+        ],
+        "githubUrl": "https://github.com/codeExplorer99",
+        "bio": "Passionate about algorithms and improving social dynamics through tech.",
+        "age": 28
+    },
+    {
+        "username": "zenCoder",
+        "categories": [
+            "emotional",
+            "intellectual"
+        ],
+        "challenges": [
+            "mindfulnessChallenge",
+            "logicPuzzle"
+        ],
+        "githubUrl": "https://github.com/zenCoder",
+        "bio": "A full-stack developer into meditation and clean code.",
+        "age": 34
+    },
+    {
+        "username": "hackThePlanet",
+        "categories": [
+            "physical",
+            "intellectual"
+        ],
+        "challenges": [
+            "pushupChallenge",
+            "riddleOfTheDay"
+        ],
+        "githubUrl": "https://github.com/hackThePlanet",
+        "bio": "Fitness junkie and software tinkerer.",
+        "age": 25
+    },
+    {
+        "username": "brainStormer",
+        "categories": [
+            "social",
+            "intellectual"
+        ],
+        "challenges": [
+            "teamHackathon",
+            "debateClub"
+        ],
+        "githubUrl": "https://github.com/brainStormer",
+        "bio": "Love group challenges and thinking outside the box.",
+        "age": 30
+    },
+    {
+        "username": "quietForce",
+        "categories": [
+            "emotional"
+        ],
+        "challenges": [
+            "gratitudeJournal"
+        ],
+        "githubUrl": "https://github.com/quietForce",
+        "bio": "Introvert leveling up emotional intelligence, one day at a time.",
+        "age": 27
+    },
+    {
+        "username": "devSprint",
+        "categories": [
+            "physical",
+            "social"
+        ],
+        "challenges": [
+            "runTogether",
+            "pairProgramming"
+        ],
+        "githubUrl": "https://github.com/devSprint",
+        "bio": "Sprinter IRL and in the code editor.",
+        "age": 22
+    },
+    {
+        "username": "logicLover",
+        "categories": [
+            "intellectual"
+        ],
+        "challenges": [
+            "chessPuzzle",
+            "codingChallenge"
+        ],
+        "githubUrl": "https://github.com/logicLover",
+        "bio": "I think, therefore I code.",
+        "age": 31
+    }
+]

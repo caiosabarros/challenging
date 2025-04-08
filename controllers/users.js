@@ -15,7 +15,7 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
     try {
-        const userUserName = new ObjectId(req.params.username);
+        const userUserName = req.params.username;
         const result = await mongodb.getDatabase().db("challenging").collection('users').find({ username: userUserName });
         result.toArray().then((users) => {
             res.setHeader('Content-Type', 'application/json');
@@ -50,7 +50,7 @@ const createUser = async (req, res, next) => {
 
 const updateUser = async (req, res, next) => {
     try {
-        const userUserName = new ObjectId(req.params.username);
+        const userUserName = req.params.username;
 
         const user = {
             username: req.body.username,
@@ -74,7 +74,7 @@ const updateUser = async (req, res, next) => {
 
 const deleteUser = async (req, res, next) => {
     try {
-        const userUserName = new ObjectId(req.params.username);
+        const userUserName = req.params.username;
         const response = await mongodb.getDatabase().db("challenging").collection('users').deleteOne({ username: userUserName });
         if (response.deletedCount > 0) {
             res.status(204).send();

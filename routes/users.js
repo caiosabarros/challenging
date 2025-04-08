@@ -7,13 +7,13 @@ const usersController = require('../controllers/users');
 // GET /user
 router.get('/', usersController.getAll);
 // GET /user/{username}
-router.get('/:id', usersController.getSingle);
+router.get('/:username', usersController.getSingle);
 // POST /user
 router.post('/', isAuthenticated, usersController.createUser);
 // PUT /user/{username}
-router.put('/:id', isAuthenticated, usersController.updateUser);
+router.put('/:username', isAuthenticated, usersController.updateUser);
 // DELETE /user/{username}
-router.delete('/:id', isAuthenticated, usersController.deleteUser);
+router.delete('/:username', isAuthenticated, usersController.deleteUser);
 
 
 module.exports = router;

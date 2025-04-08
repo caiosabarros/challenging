@@ -1,0 +1,57 @@
+[
+    {
+      "users": [],
+      "dailyChallenges": [
+        "1. Walk for 20 minutes without your phone.",
+        "2. Do 15 squats and 10 pushups.",
+        "3. Stretch for 5 minutes in the morning.",
+        "4. Drink at least 6 cups of water.",
+        "5. Stand up and walk every hour for a minute.",
+        "6. Take the stairs whenever possible.",
+        "7. Try a new workout video.",
+        "8. Get 7+ hours of sleep tonight.",
+        "9. Replace one processed meal with whole foods.",
+        "10. Practice mindful breathing after waking up."
+      ],
+      "listDifficulty": 2,
+      "title": "Movement Starter Pack",
+      "description": "Gentle challenges to reconnect your body and boost energy."
+    },
+    {
+      "users": [],
+      "dailyChallenges": [
+        "1. Do 30 jumping jacks.",
+        "2. Try a 10-minute yoga flow.",
+        "3. Avoid sugar for one whole day.",
+        "4. Go on a nature walk or jog.",
+        "5. Practice posture correction for 1 hour.",
+        "6. Do a 20-minute HIIT routine.",
+        "7. Eat a vegetable in every meal.",
+        "8. Try 60 seconds of cold water on your shower.",
+        "9. Track your steps or movement today.",
+        "10. Journal how your body feels after moving."
+      ],
+      "listDifficulty": 3,
+      "title": "Body Boost Challenge",
+      "description": "Improve endurance and habits with small but energizing goals."
+    },
+    {
+      "users": [],
+      "dailyChallenges": [
+        "1. Try 3 new mobility exercises.",
+        "2. Plank for 60 seconds.",
+        "3. Do a wall sit for 90 seconds.",
+        "4. Follow a beginner dance video.",
+        "5. Cook a nutritious meal at home.",
+        "6. Log everything you eat today.",
+        "7. Meditate for 10 minutes post-workout.",
+        "8. Spend 10+ minutes outdoors in motion.",
+        "9. Go a full day without sitting longer than 45 minutes.",
+        "10. Create a personal stretching routine."
+      ],
+      "listDifficulty": 3,
+      "title": "Core & Energy Reset",
+      "description": "Balance strength, fuel, and awareness for full-body refreshment."
+    }
+  ]
+  
