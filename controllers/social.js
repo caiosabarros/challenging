@@ -16,8 +16,7 @@ const getAll = async (req, res, next) => {
 
 const getUsersForSocial = async (req, res, next) => {
     try {
-        const socialListsCursor = await mongodb.getDatabase().db("challenging").collection("social").find();
-        const socialLists = await socialListsCursor.toArray();
+        const socialLists = await mongodb.getDatabase().db("challenging").collection("social").find();
         const allSocialUsers = socialLists.flatMap((socialList) => socialList.users || []);
         console.log("allSocialUsers", allSocialUsers);
         res.setHeader('Content-Type', 'application/json');

@@ -16,8 +16,7 @@ const getAll = async (req, res, next) => {
 
 const getUsersForEmotional = async (req, res, next) => {
     try {
-        const emotionalListsCursor = await mongodb.getDatabase().db("challenging").collection("emotional").find();
-        const emotionalLists = await emotionalListsCursor.toArray();
+        const emotionalLists = await mongodb.getDatabase().db("challenging").collection("emotional").find();
         const allEmotionalUsers = emotionalLists.flatMap((emotionalList) => emotionalList.users || []);
         console.log("allEmotionalUsers", allEmotionalUsers);
         res.setHeader('Content-Type', 'application/json');

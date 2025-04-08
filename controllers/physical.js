@@ -16,8 +16,7 @@ const getAll = async (req, res, next) => {
 
 const getUsersForPhysical = async (req, res, next) => {
     try {
-        const physicalListsCursor = await mongodb.getDatabase().db("challenging").collection("physical").find();
-        const physicalLists = await physicalListsCursor.toArray();
+        const physicalLists = await mongodb.getDatabase().db("challenging").collection("physical").find();
         const allPhysicalUsers = physicalLists.flatMap((physicalList) => physicalList.users || []);
         console.log("allPhysicalUsers", allPhysicalUsers);
         res.setHeader('Content-Type', 'application/json');
