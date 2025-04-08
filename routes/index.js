@@ -9,11 +9,11 @@ router.get('/', (req, res) => {
 	res.send('Hello!');
 })
 
-router.use('/users', require('./users.js'))
-router.use('/intellectual', require('./intellectual.js'))
-router.use('/social', require('./social.js'))
-router.use('/emotional', require('./emotional.js'))
-router.use('/physical', require('./physical.js'))
+router.use('/users', require('./users'))
+router.use('/intellectual', require('./intellectual'))
+router.use('/social', require('./social'))
+router.use('/emotional', require('./emotional'))
+router.use('/physical', require('./physical'))
 
 // GET /user/login
 router.get('/login', passport.authenticate('github'));

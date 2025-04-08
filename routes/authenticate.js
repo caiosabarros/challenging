@@ -1,6 +1,6 @@
 module.exports.isAuthenticated = (req, res, next) => {
     if (req.session.user === undefined) {
-        res.status(500).json("Forbidden.");
+        return res.status(403).json("Forbidden.");
     }
     next();
-};
+}
