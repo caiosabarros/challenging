@@ -100,7 +100,10 @@ const updatePhysicalWithNewUser = async (req, res, next) => {
         );
 
         // add new category to user.categories without having duplicates
-        await usersController.updateUser({ ...user, categories: [...(new Set([...user.categories, "physical"]))] });
+        await mongodb.getDatabase().db("challenging").collection('users').updateOne(
+            { username },
+            { $addToSet: { categories: "intellectual" } }
+        );
 
         if (response.modifiedCount > 0) {
             res.status(204).send();
