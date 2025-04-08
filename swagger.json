@@ -5,7 +5,7 @@
     "description": "Daily social challenge API application where the user can develop courage, eliminate social anxiety and lose fear. The challenges will be split into four categories: emotional, physical, intellectual and social challenges.",
     "version": "1.0.0"
   },
-  "host": "challenging.onrender.com/",
+  "host": "challenging.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
