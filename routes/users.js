@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const isAuthenticated = require("./authenticate");
+const { isAuthenticated } = require("./authenticate");
 
 const usersController = require('../controllers/users');
 

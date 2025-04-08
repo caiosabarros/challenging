@@ -1,10 +1,11 @@
 {
   "name": "challenging",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Daily social challenge API application where the user can develop courage, eliminate social anxiety and lose fear. The challenges will be split into four categories: emotional, physical, intellectual and social challenges.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

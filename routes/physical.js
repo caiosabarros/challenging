@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const isAuthenticated = require("./authenticate.js");
+const { isAuthenticated } = require("./authenticate.js");
 
 const physicalController = require('../controllers/physical');
 
