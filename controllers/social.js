@@ -102,7 +102,7 @@ const updateSocialWithNewUser = async (req, res, next) => {
         // add new category to user.categories without having duplicates
         await mongodb.getDatabase().db("challenging").collection('users').updateOne(
             { username },
-            { $addToSet: { categories: "intellectual" } }
+            { $addToSet: { categories: "social" } }
         );
 
         if (response.modifiedCount > 0) {
