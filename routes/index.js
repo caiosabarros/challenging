@@ -2,10 +2,11 @@ const router = require('express').Router();
 const passport = require('passport');
 const path = require('path');
 
+
 router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => {
-    res.send('Hello!'); // I can place an HTML documentation here explaining how the API works.
+	res.send('Hello!');
 })
 
 router.use('/users', require('./users.js'))
@@ -23,5 +24,23 @@ router.logout('/logout', function (req, res, next) {
 		res.redirect('/');
 	});
 })
+
+router.get('/auth/status', (req, res) => {
+	if (req.session && req.session.user) {
+		res.status(200).json({
+			isLoggedIn: true,
+			user: {
+				username: req.session.user.username,
+				displayName: req.session.user.displayName,
+				profileUrl: req.session.user.profileUrl
+			}
+		});
+	} else {
+		res.status(401).json({
+			isLoggedIn: false,
+			user: null
+		});
+	}
+});
 
 module.exports = router;

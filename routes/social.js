@@ -6,14 +6,16 @@ const socialController = require('../controllers/social');
 // GET / social
 router.get('/', socialController.getAll);
 // GET / social / { list_identifier }
-router.get('/:id', socialController.getSingle);
+router.get('/:listId', socialController.getSingle);
 // GET / social / users
-router.get('/users', socialController.getSocialChallengesByUser)
+router.get('/users', socialController.getUsersForSocial)
 // POST / social
-router.post('/', socialController.createSocialChallenge);
+router.post('/', socialController.createSocial);
 // PUT / social / { list_identifier }
-router.put('/:id', socialController.updateSocialChallenge);
+router.put('/:listId', socialController.updateSocial);
+// PUT / social / { list_identifier }
+router.put('/:listId/:username', socialController.updateSocialWithNewUser);
 // DELETE / social / { list_identifier }
-router.delete('/:id', socialController.deleteSocialChallenge);
+router.delete('/:listId', socialController.deleteSocial);
 
 module.exports = router;
