@@ -5,7 +5,7 @@
     "description": "Daily social challenge API application where the user can develop courage, eliminate social anxiety and lose fear. The challenges will be split into four categories: emotional, physical, intellectual and social challenges.",
     "version": "1.0.0"
   },
-  "host": "challenging.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "https"
@@ -13,7 +13,7 @@
   "paths": {
     "/": {
       "get": {
-        "description": "Challenging API documentation",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -23,7 +23,17 @@
     },
     "/login": {
       "get": {
-        "description": "Login to the Challenging application",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "description": "",
         "responses": {
           "default": {
             "description": ""
@@ -33,7 +43,7 @@
     },
     "/auth/status": {
       "get": {
-        "description": "Check whether you are connected to the Challenging application",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -46,7 +56,7 @@
     },
     "/api-docs": {
       "get": {
-        "description": "Swagger documentation for the Challenging application",
+        "description": "",
         "responses": {
           "default": {
             "description": ""
@@ -56,7 +66,7 @@
     },
     "/users/": {
       "get": {
-        "description": "Get lists of users currently active on the Challenging application",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -67,7 +77,7 @@
         }
       },
       "post": {
-        "description": "Register a new user to the Challenging application",
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -101,6 +111,9 @@
           "204": {
             "description": "No Content"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -109,7 +122,7 @@
     },
     "/users/{username}": {
       "get": {
-        "description": "Get an user by their username.",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -128,7 +141,7 @@
         }
       },
       "put": {
-        "description": "Update a new user in the Challenging application",
+        "description": "",
         "parameters": [
           {
             "name": "username",
@@ -143,22 +156,22 @@
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "myname_or_surname"
+                  "example": "any"
                 },
                 "categories": {
-                  "example": "[emotional, physical, intellectual, social]"
+                  "example": "any"
                 },
                 "challenges": {
-                  "example": "[firstListId, secondListId]"
+                  "example": "any"
                 },
                 "githubUrl": {
-                  "example": "https://github.com/mariejane"
+                  "example": "any"
                 },
                 "bio": {
-                  "example": "This is a description of you you'd like other people to contemplate."
+                  "example": "any"
                 },
                 "age": {
-                  "example": 18
+                  "example": "any"
                 }
               }
             }
@@ -166,7 +179,10 @@
         ],
         "responses": {
           "204": {
-            "description": "Successfully registered!"
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
           },
           "500": {
             "description": "Internal Server Error"
@@ -174,7 +190,7 @@
         }
       },
       "delete": {
-        "description": "Delete an user from the Challenging application.",
+        "description": "",
         "parameters": [
           {
             "name": "username",
@@ -187,6 +203,9 @@
           "204": {
             "description": "No Content"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -195,7 +214,7 @@
     },
     "/intellectual/": {
       "get": {
-        "description": "Get available lists of intellectual challenges in the Challenging application.",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -206,10 +225,39 @@
         }
       },
       "post": {
-        "description": "Create a new list of intellectual challenges.",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dailyChallenges": {
+                  "example": "any"
+                },
+                "listDifficulty": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -235,114 +283,7 @@
         }
       },
       "put": {
-        "description": "Update a list of intellectual challenges in the Challenging application.",
-        "parameters": [
-          {
-            "name": "listId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "delete": {
         "description": "",
-        "parameters": [
-          {
-            "name": "listId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/intellectual/users": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/social/": {
-      "get": {
-        "description": "Get available lists of social challenges in the Challenging application.",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "description": "Create a new list of social challenges.",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "listDifficulty": {
-                  "example": "any"
-                },
-                "title": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/social/{listId}": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "listId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "description": "Update a list of social challenges in the Challenging application.",
         "parameters": [
           {
             "name": "listId",
@@ -379,6 +320,9 @@
           "204": {
             "description": "No Content"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -398,13 +342,16 @@
           "204": {
             "description": "No Content"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       }
     },
-    "/social/users": {
+    "/intellectual/users": {
       "get": {
         "description": "",
         "produces": [
@@ -417,9 +364,9 @@
         }
       }
     },
-    "/social/{listId}/{username}": {
+    "/intellectual/{listId}/{username}": {
       "put": {
-        "description": "Update a list of social challenges in the Challenging application.",
+        "description": "",
         "parameters": [
           {
             "name": "listId",
@@ -432,7 +379,39 @@
             "in": "path",
             "required": true,
             "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/social/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
           {
             "name": "body",
             "in": "body",
@@ -459,6 +438,141 @@
           "204": {
             "description": "No Content"
           },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/social/{listId}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "example": "any"
+                },
+                "dailyChallenges": {
+                  "example": "any"
+                },
+                "listDifficulty": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/social/users": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/social/{listId}/{username}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -470,7 +584,7 @@
     },
     "/emotional/": {
       "get": {
-        "description": "Get available lists of emotional challenges in the Challenging application.",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -481,10 +595,39 @@
         }
       },
       "post": {
-        "description": "Create a new list of emotional challenges.",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dailyChallenges": {
+                  "example": "any"
+                },
+                "listDifficulty": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -510,18 +653,48 @@
         }
       },
       "put": {
-        "description": "Update a list of emotional challenges in the Challenging application.",
+        "description": "",
         "parameters": [
           {
             "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "example": "any"
+                },
+                "dailyChallenges": {
+                  "example": "any"
+                },
+                "listDifficulty": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -536,8 +709,14 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -545,16 +724,52 @@
     "/emotional/users": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/emotional/{listId}/{username}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/physical/": {
       "get": {
-        "description": "Get available lists of physical challenges in the Challenging application.",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -565,10 +780,39 @@
         }
       },
       "post": {
-        "description": "Create a new list of physical challenges.",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dailyChallenges": {
+                  "example": "any"
+                },
+                "listDifficulty": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -594,18 +838,48 @@
         }
       },
       "put": {
-        "description": "Update a list of physical challenges in the Challenging application.",
+        "description": "",
         "parameters": [
           {
             "name": "listId",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "example": "any"
+                },
+                "dailyChallenges": {
+                  "example": "any"
+                },
+                "listDifficulty": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -620,8 +894,14 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -629,9 +909,45 @@
     "/physical/users": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/physical/{listId}/{username}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
