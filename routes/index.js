@@ -2,11 +2,10 @@ const router = require('express').Router();
 const passport = require('passport');
 const path = require('path');
 
-
 router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => {
-	res.send('Hello!');
+	res.sendFile(path.join(__dirname, path.join('../doc.html')));
 })
 
 router.use('/users', require('./users.js'))
