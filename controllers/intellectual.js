@@ -19,7 +19,6 @@ const getUsersForIntellectual = async (req, res, next) => {
         const intellectualListsCursor = await mongodb.getDatabase().db("challenging").collection("intellectual").find();
         const intellectualLists = await intellectualListsCursor.toArray();
         const allIntellectualUsers = intellectualLists.flatMap((intellectualList) => intellectualList.users || []);
-        console.log("allIntellectualUsers", allIntellectualUsers);
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(allIntellectualUsers);
     } catch (err) {
@@ -98,6 +97,8 @@ const updateIntellectualWithNewUser = async (req, res, next) => {
             { _id: listId },
             { $addToSet: { users: user } }
         );
+        // add new category to user.categories without having duplicates
+        await usersController.updateUser({ ...user, categories: [...(new Set([...user.categories, "intellectual"]))] });
 
         if (response.modifiedCount > 0) {
             res.status(204).send();
