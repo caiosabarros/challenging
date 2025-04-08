@@ -27,7 +27,7 @@ const getSingle = async (req, res) => {
     // get list identifier
     const emotionalListId = new ObjectId(req.params.listId);
     // find the correlated list
-    const result = await mongodb.getDatabase().db("challenging").collection('emotional').find({ id: emotionalListId });
+    const result = await mongodb.getDatabase().db("challenging").collection('emotional').find({ _id: emotionalListId });
     // return it.
     result.toArray().then((emotional) => {
         res.setHeader('Content-Type', 'application/json')
@@ -70,7 +70,7 @@ const updateEmotional = async (req, res) => {
         title: req.body.title,
         description: req.body.description,
     };
-    const response = await mongodb.getDatabase().db("challenging").collection('emotional').replaceOne({ id: listId }, emotional);
+    const response = await mongodb.getDatabase().db("challenging").collection('emotional').replaceOne({ _id: listId }, emotional);
     if (response.modifiedCount > 0) {
         res.status(204).send();
     } else {
@@ -81,7 +81,7 @@ const updateEmotional = async (req, res) => {
 const updateEmotionalWithNewUser = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
     const username = req.params.username;
-    const user = await mongodb.getDatabase().db("challenging").collection('emotional').find({ id: emotionalListId });
+    const user = await mongodb.getDatabase().db("challenging").collection('emotional').find({ _id: emotionalListId });
     if (!user) {
         return res.status(404).json({ error: "User not found" });
     }
@@ -105,7 +105,7 @@ const updateEmotionalWithNewUser = async (req, res) => {
 
 const deleteEmotional = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
-    const response = await mongodb.getDatabase().db("challenging").collection('emotional').deleteOne({ id: listId });
+    const response = await mongodb.getDatabase().db("challenging").collection('emotional').deleteOne({ _id: listId });
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {

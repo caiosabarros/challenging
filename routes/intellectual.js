@@ -6,14 +6,16 @@ const intellectualController = require('../controllers/intellectual');
 // GET / intellectual
 router.get('/', intellectualController.getAll);
 // GET / intellectual / { list_identifier }
-router.get('/:id', intellectualController.getSingle);
+router.get('/:listId', intellectualController.getSingle);
 // GET / intellectual / users
-router.get('/users', intellectualController.getIntellectualChallengesByUser)
+router.get('/users', intellectualController.getUsersForIntellectual)
 // POST / intellectual
-router.post('/', intellectualController.createIntellectualChallenge);
+router.post('/', intellectualController.createIntellectual);
 // PUT / intellectual / { list_identifier }
-router.put('/:id', intellectualController.updateIntellectualChallenge);
+router.put('/:listId', intellectualController.updateIntellectual);
+// PUT / intellectual / { list_identifier }
+router.put('/:listId/:username', intellectualController.updateIntellectualWithNewUser);
 // DELETE / intellectual / { list_identifier }
-router.delete('/:id', intellectualController.deleteIntellectualChallenge);
+router.delete('/:listId', intellectualController.deleteIntellectual);
 
 module.exports = router;

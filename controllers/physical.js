@@ -27,7 +27,7 @@ const getSingle = async (req, res) => {
     // get list identifier
     const physicalListId = new ObjectId(req.params.listId);
     // find the correlated list
-    const result = await mongodb.getDatabase().db("challenging").collection('physical').find({ id: physicalListId });
+    const result = await mongodb.getDatabase().db("challenging").collection('physical').find({ _id: physicalListId });
     // return it.
     result.toArray().then((physical) => {
         res.setHeader('Content-Type', 'application/json')
@@ -70,7 +70,7 @@ const updatePhysical = async (req, res) => {
         title: req.body.title,
         description: req.body.description,
     };
-    const response = await mongodb.getDatabase().db("challenging").collection('physical').replaceOne({ id: listId }, physical);
+    const response = await mongodb.getDatabase().db("challenging").collection('physical').replaceOne({ _id: listId }, physical);
     if (response.modifiedCount > 0) {
         res.status(204).send();
     } else {
@@ -81,7 +81,7 @@ const updatePhysical = async (req, res) => {
 const updatePhysicalWithNewUser = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
     const username = req.params.username;
-    const user = await mongodb.getDatabase().db("challenging").collection('physical').find({ id: physicalListId });
+    const user = await mongodb.getDatabase().db("challenging").collection('physical').find({ _id: physicalListId });
     if (!user) {
         return res.status(404).json({ error: "User not found" });
     }
@@ -105,7 +105,7 @@ const updatePhysicalWithNewUser = async (req, res) => {
 
 const deletePhysical = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
-    const response = await mongodb.getDatabase().db("challenging").collection('physical').deleteOne({ id: listId });
+    const response = await mongodb.getDatabase().db("challenging").collection('physical').deleteOne({ _id: listId });
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {

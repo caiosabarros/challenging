@@ -27,7 +27,7 @@ const getSingle = async (req, res) => {
     // get list identifier
     const intellectualListId = new ObjectId(req.params.listId);
     // find the correlated list
-    const result = await mongodb.getDatabase().db("challenging").collection('intellectual').find({ id: intellectualListId });
+    const result = await mongodb.getDatabase().db("challenging").collection('intellectual').find({ _id: intellectualListId });
     // return it.
     result.toArray().then((intellectual) => {
         res.setHeader('Content-Type', 'application/json')
@@ -70,7 +70,7 @@ const updateIntellectual = async (req, res) => {
         title: req.body.title,
         description: req.body.description,
     };
-    const response = await mongodb.getDatabase().db("challenging").collection('intellectual').replaceOne({ id: listId }, intellectual);
+    const response = await mongodb.getDatabase().db("challenging").collection('intellectual').replaceOne({ _id: listId }, intellectual);
     if (response.modifiedCount > 0) {
         res.status(204).send();
     } else {
@@ -81,7 +81,7 @@ const updateIntellectual = async (req, res) => {
 const updateIntellectualWithNewUser = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
     const username = req.params.username;
-    const user = await mongodb.getDatabase().db("challenging").collection('intellectual').find({ id: intellectualListId });
+    const user = await mongodb.getDatabase().db("challenging").collection('intellectual').find({ _id: intellectualListId });
     if (!user) {
         return res.status(404).json({ error: "User not found" });
     }
@@ -105,7 +105,7 @@ const updateIntellectualWithNewUser = async (req, res) => {
 
 const deleteIntellectual = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
-    const response = await mongodb.getDatabase().db("challenging").collection('intellectual').deleteOne({ id: listId });
+    const response = await mongodb.getDatabase().db("challenging").collection('intellectual').deleteOne({ _id: listId });
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {

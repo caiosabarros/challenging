@@ -6,14 +6,16 @@ const emotionalController = require('../controllers/emotional');
 // GET / emotional
 router.get('/', emotionalController.getAll);
 // GET / emotional / { list_identifier }
-router.get('/:id', emotionalController.getSingle);
+router.get('/:listId', emotionalController.getSingle);
 // GET / emotional / users
-router.get('/users', emotionalController.getEmotionalChallengesByUser)
+router.get('/users', emotionalController.getUsersForEmotional)
 // POST / emotional
-router.post('/', emotionalController.createEmotionalChallenge);
+router.post('/', emotionalController.createEmotional);
 // PUT / emotional / { list_identifier }
-router.put('/:id', emotionalController.updateEmotionalChallenge);
+router.put('/:listId', emotionalController.updateEmotional);
+// PUT / emotional / { list_identifier }
+router.put('/:listId/:username', emotionalController.updateEmotionalWithNewUser);
 // DELETE / emotional / { list_identifier }
-router.delete('/:id', emotionalController.deleteEmotionalChallenge);
+router.delete('/:listId', emotionalController.deleteEmotional);
 
 module.exports = router;

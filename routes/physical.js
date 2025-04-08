@@ -6,14 +6,16 @@ const physicalController = require('../controllers/physical');
 // GET / physical
 router.get('/', physicalController.getAll);
 // GET / physical / { list_identifier }
-router.get('/:id', physicalController.getSingle);
+router.get('/:listId', physicalController.getSingle);
 // GET / physical / users
-router.get('/users', physicalController.getPhysicalChallengesByUser)
+router.get('/users', physicalController.getUsersForPhysical)
 // POST / physical
-router.post('/', physicalController.createPhysicalChallenge);
+router.post('/', physicalController.createPhysical);
 // PUT / physical / { list_identifier }
-router.put('/:id', physicalController.updatePhysicalChallenge);
+router.put('/:listId', physicalController.updatePhysical);
+// PUT / physical / { list_identifier }
+router.put('/:listId/:username', physicalController.updatePhysicalWithNewUser);
 // DELETE / physical / { list_identifier }
-router.delete('/:id', physicalController.deletePhysicalChallenge);
+router.delete('/:listId', physicalController.deletePhysical);
 
 module.exports = router;

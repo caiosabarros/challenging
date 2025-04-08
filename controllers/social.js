@@ -27,7 +27,7 @@ const getSingle = async (req, res) => {
     // get list identifier
     const socialListId = new ObjectId(req.params.listId);
     // find the correlated list
-    const result = await mongodb.getDatabase().db("challenging").collection('social').find({ id: socialListId });
+    const result = await mongodb.getDatabase().db("challenging").collection('social').find({ _id: socialListId });
     // return it.
     result.toArray().then((social) => {
         res.setHeader('Content-Type', 'application/json')
@@ -70,7 +70,7 @@ const updateSocial = async (req, res) => {
         title: req.body.title,
         description: req.body.description,
     };
-    const response = await mongodb.getDatabase().db("challenging").collection('social').replaceOne({ id: listId }, social);
+    const response = await mongodb.getDatabase().db("challenging").collection('social').replaceOne({ _id: listId }, social);
     if (response.modifiedCount > 0) {
         res.status(204).send();
     } else {
@@ -81,7 +81,7 @@ const updateSocial = async (req, res) => {
 const updateSocialWithNewUser = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
     const username = req.params.username;
-    const user = await mongodb.getDatabase().db("challenging").collection('social').find({ id: socialListId });
+    const user = await mongodb.getDatabase().db("challenging").collection('social').find({ _id: socialListId });
     if (!user) {
         return res.status(404).json({ error: "User not found" });
     }
@@ -105,7 +105,7 @@ const updateSocialWithNewUser = async (req, res) => {
 
 const deleteSocial = async (req, res) => {
     const listId = new ObjectId(req.params.listId);
-    const response = await mongodb.getDatabase().db("challenging").collection('social').deleteOne({ id: listId });
+    const response = await mongodb.getDatabase().db("challenging").collection('social').deleteOne({ _id: listId });
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {
