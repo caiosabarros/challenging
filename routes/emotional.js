@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const isAuthenticated = require("./authenticate.js");
 
 const emotionalController = require('../controllers/emotional');
 
@@ -10,12 +11,12 @@ router.get('/:listId', emotionalController.getSingle);
 // GET / emotional / users
 router.get('/users', emotionalController.getUsersForEmotional)
 // POST / emotional
-router.post('/', emotionalController.createEmotional);
+router.post('/', isAuthenticated, emotionalController.createEmotional);
 // PUT / emotional / { list_identifier }
-router.put('/:listId', emotionalController.updateEmotional);
+router.put('/:listId', isAuthenticated, emotionalController.updateEmotional);
 // PUT / emotional / { list_identifier }
-router.put('/:listId/:username', emotionalController.updateEmotionalWithNewUser);
+router.put('/:listId/:username', isAuthenticated, emotionalController.updateEmotionalWithNewUser);
 // DELETE / emotional / { list_identifier }
-router.delete('/:listId', emotionalController.deleteEmotional);
+router.delete('/:listId', isAuthenticated, emotionalController.deleteEmotional);
 
 module.exports = router;

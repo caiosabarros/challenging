@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const isAuthenticated = require("./authenticate.js");
 
 const physicalController = require('../controllers/physical');
 
@@ -10,12 +11,12 @@ router.get('/:listId', physicalController.getSingle);
 // GET / physical / users
 router.get('/users', physicalController.getUsersForPhysical)
 // POST / physical
-router.post('/', physicalController.createPhysical);
+router.post('/', isAuthenticated, physicalController.createPhysical);
 // PUT / physical / { list_identifier }
-router.put('/:listId', physicalController.updatePhysical);
+router.put('/:listId', isAuthenticated, physicalController.updatePhysical);
 // PUT / physical / { list_identifier }
-router.put('/:listId/:username', physicalController.updatePhysicalWithNewUser);
+router.put('/:listId/:username', isAuthenticated, physicalController.updatePhysicalWithNewUser);
 // DELETE / physical / { list_identifier }
-router.delete('/:listId', physicalController.deletePhysical);
+router.delete('/:listId', isAuthenticated, physicalController.deletePhysical);
 
 module.exports = router;
