@@ -76,6 +76,16 @@ app.get('/github/callback',
     }
 );
 
+app.use((error, req, res, next) => {
+    let statusCode = error.statusCode;
+    let errorMessage = error.errorMessage || "Internal Server Error";
+    res.send(statusCode).json({
+        error: {
+            message: errorMessage
+        }
+    });
+});
+
 mongo.initDb((err) => {
     if (err) {
         console.log(err);
