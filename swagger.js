@@ -6,7 +6,7 @@ const doc = {
         title: 'Challenging API',
         description: 'Daily social challenge API application where the user can develop courage, eliminate social anxiety and lose fear. The challenges will be split into four categories: emotional, physical, intellectual and social challenges.'
     },
-    host: 'localhost:3000',
+    host: "challenging.onrender.com",
     schemes: ['https']
 };
 
