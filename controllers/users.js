@@ -28,6 +28,7 @@ const getSingle = async (req, res, next) => {
 
 const createUser = async (req, res, next) => {
     try {
+        console.log(req.body);
         const user = {
             username: req.body.username,
             categories: req.body.categories,

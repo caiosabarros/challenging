@@ -10,6 +10,7 @@ const GithubStrategy = require("passport-github2").Strategy;
 const port = process.env.PORT || 3000;
 
 app
+    .use(bodyParser.json())
     .use(session({
         secret: "secret",
         resave: false,
