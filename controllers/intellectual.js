@@ -16,7 +16,8 @@ const getAll = async (req, res, next) => {
 
 const getUsersForIntellectual = async (req, res, next) => {
     try {
-        const intellectualLists = await mongodb.getDatabase().db("challenging").collection("intellectual").find();
+        let intellectualLists = await mongodb.getDatabase().db("challenging").collection("intellectual").find();
+        intellectualLists = await intellectualLists.toArray();
         const allIntellectualUsers = intellectualLists.flatMap((intellectualList) => intellectualList.users || []);
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(allIntellectualUsers);

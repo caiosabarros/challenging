@@ -6,10 +6,10 @@ const intellectualController = require('../controllers/intellectual');
 
 // GET / intellectual
 router.get('/', intellectualController.getAll);
-// GET / intellectual / { list_identifier }
-router.get('/:listId', intellectualController.getSingle);
 // GET / intellectual / users
 router.get('/users', intellectualController.getUsersForIntellectual)
+// GET / intellectual / { list_identifier }
+router.get('/:listId', intellectualController.getSingle);
 // POST / intellectual
 router.post('/', isAuthenticated, intellectualController.createIntellectual);
 // PUT / intellectual / { list_identifier }
