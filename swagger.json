@@ -13,7 +13,7 @@
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "description": "Documentation for the API",
         "responses": {
           "200": {
             "description": "OK"
@@ -23,7 +23,7 @@
     },
     "/login": {
       "get": {
-        "description": "",
+        "description": "LOGIN into the API",
         "responses": {
           "default": {
             "description": ""
@@ -33,7 +33,7 @@
     },
     "/logout": {
       "get": {
-        "description": "",
+        "description": "LOGOUT of the API",
         "responses": {
           "default": {
             "description": ""
@@ -43,7 +43,7 @@
     },
     "/auth/status": {
       "get": {
-        "description": "",
+        "description": "Check if user is logged in the API",
         "responses": {
           "200": {
             "description": "OK"
@@ -54,19 +54,9 @@
         }
       }
     },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/users/": {
       "get": {
-        "description": "",
+        "description": "Get all users registered in the API",
         "produces": [
           "application/json"
         ],
@@ -77,7 +67,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Register a user in the API",
         "parameters": [
           {
             "name": "body",
@@ -122,7 +112,7 @@
     },
     "/users/{username}": {
       "get": {
-        "description": "",
+        "description": "Get a user by username",
         "produces": [
           "application/json"
         ],
@@ -141,7 +131,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Modify a user",
         "parameters": [
           {
             "name": "username",
@@ -190,7 +180,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a user",
         "parameters": [
           {
             "name": "username",
@@ -214,7 +204,7 @@
     },
     "/intellectual/": {
       "get": {
-        "description": "",
+        "description": "Get all the lists of intellectual challenges.",
         "produces": [
           "application/json"
         ],
@@ -225,7 +215,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a list of intellectual challenges.",
         "parameters": [
           {
             "name": "body",
@@ -264,7 +254,7 @@
     },
     "/intellectual/{listId}": {
       "get": {
-        "description": "",
+        "description": "Get a list of intellectual challenges by ID.",
         "produces": [
           "application/json"
         ],
@@ -283,7 +273,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Modify a list of an intellectual challenge.",
         "parameters": [
           {
             "name": "listId",
@@ -329,7 +319,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a list of intellectual challenges by ID.",
         "parameters": [
           {
             "name": "listId",
@@ -353,7 +343,7 @@
     },
     "/intellectual/users": {
       "get": {
-        "description": "",
+        "description": "Get all the users from an intellectual list.",
         "produces": [
           "application/json"
         ],
@@ -366,7 +356,7 @@
     },
     "/intellectual/{listId}/{username}": {
       "put": {
-        "description": "",
+        "description": "Modify an intellectual list for a specific user.",
         "parameters": [
           {
             "name": "listId",
@@ -399,7 +389,7 @@
     },
     "/social/": {
       "get": {
-        "description": "",
+        "description": "Get all the lists of social challenges.",
         "produces": [
           "application/json"
         ],
@@ -584,7 +574,7 @@
     },
     "/emotional/": {
       "get": {
-        "description": "",
+        "description": "Get all the lists of emocional challenges.",
         "produces": [
           "application/json"
         ],
@@ -769,7 +759,7 @@
     },
     "/physical/": {
       "get": {
-        "description": "",
+        "description": "Get all the lists of physical challenges.",
         "produces": [
           "application/json"
         ],
