@@ -6,10 +6,10 @@ const physicalController = require('../controllers/physical');
 
 // GET / physical
 router.get('/', physicalController.getAll);
-// GET / physical / { list_identifier }
-router.get('/:listId', physicalController.getSingle);
 // GET / physical / users
 router.get('/users', physicalController.getUsersForPhysical)
+// GET / physical / { list_identifier }
+router.get('/:listId', physicalController.getSingle);
 // POST / physical
 router.post('/', isAuthenticated, physicalController.createPhysical);
 // PUT / physical / { list_identifier }

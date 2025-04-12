@@ -6,10 +6,10 @@ const socialController = require('../controllers/social');
 
 // GET / social
 router.get('/', socialController.getAll);
-// GET / social / { list_identifier }
-router.get('/:listId', socialController.getSingle);
 // GET / social / users
 router.get('/users', socialController.getUsersForSocial)
+// GET / social / { list_identifier }
+router.get('/:listId', socialController.getSingle);
 // POST / social
 router.post('/', isAuthenticated, socialController.createSocial);
 // PUT / social / { list_identifier }
