@@ -62,7 +62,7 @@ const updateUser = async (req, res, next) => {
             age: req.body.age,
         };
 
-        const response = await mongodb.getDatabase().db("hunter").collection('users').replaceOne({ username: userUserName }, user);
+        const response = await mongodb.getDatabase().db("challenging").collection('users').replaceOne({ username: userUserName }, user);
         if (response.modifiedCount > 0) {
             res.status(204).send();
         } else {
