@@ -439,7 +439,7 @@
     },
     "/social/{listId}": {
       "get": {
-        "description": "",
+        "description": "Get a list of social challenges by ID.",
         "produces": [
           "application/json"
         ],
@@ -624,7 +624,7 @@
     },
     "/emotional/{listId}": {
       "get": {
-        "description": "",
+        "description": "Get a list of emotional challenges by ID.",
         "produces": [
           "application/json"
         ],
@@ -809,7 +809,7 @@
     },
     "/physical/{listId}": {
       "get": {
-        "description": "",
+        "description": "Get a list of physical challenges by ID.",
         "produces": [
           "application/json"
         ],
